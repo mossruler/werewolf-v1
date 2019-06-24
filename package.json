@@ -1,0 +1,12 @@
+{
+  "name": "werewolf",
+  "version": "0.0.1",
+  "description": "Werewolf helper for mobile",
+  "dependencies": {
+    "chance": "^1.0.18",
+    "express": "^4.15.2",
+    "helmet": "^3.18.0",
+    "random-words": "^1.1.0",
+    "socket.io": "^2.2.0"
+  }
+}

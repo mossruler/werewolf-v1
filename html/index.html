@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Werewolf</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+      var home, playerLogin, villageBuilder, lobby, hostGameView, playerGameView
+      window.onload = function () {
+        home = document.getElementById("home");
+        villageBuilder = document.getElementById("villageBuilder");
+        lobby = document.getElementById("lobby");
+        playerLogin = document.getElementById("playerLogin");
+      }
+    </script>
+  </head>
+  <body class="text-center">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
+    <header class="jumbotron text-center">
+      <h1>Werewolf</h1>
+    </header>
+    <main class="conatiner text-center">
+        <div id="home">
+            <script src="home.js" charset="utf-8"></script>
+            <h1>Join Game</h1>
+            <button onclick="host()">Host</button>
+            <button onclick="player()">Player</button>
+          </div>
+      
+          <div id="villageBuilder" style="display:none">
+            <h1>Village</h1>
+            <ul id=villageBuilderList class="list-group"></ul>
+            <input type="text" id="villageBuilderInput" autocomplete="off" autofocus><button onclick="addVillageMember()">Add member</button>
+            <p>Habitants: <span id="villageBuilderCounter">0</span></p>
+            <button onclick="buildVillage()">Finish</button>
+            <script src="villageBuilder.js" charset="utf-8"></script>
+          </div>
+      
+          <div id="lobby" style="display:none">
+            <h1>Code: <span id="gameCode"></span></h1>
+            <h2>Waiting for players</h2>
+            <p><span id="connectedCount">0</span> of <span id="villageSize">0</span> players connected</p>
+            <ul id="playerList" class="list-group"></ul>
+            <button id="startButton" onclick="start()" disabled >Start</button>
+            <script src="lobby.js" charset="utf-8"></script>
+          </div>
+      
+          <div id="playerLogin" style="display:none">
+            <div class="alert alert-danger" id="errorBox" style="display:none">
+                 <strong>Error!</strong> <span id="loginErrorReason"></span>
+            </div>
+            <p>Code: <input id="loginCode" autocomplete="off"></p>
+            <p>Name: <input id="loginName" autocomplete="off"></p>
+            <button onclick="login()">Enter Room</button>
+            
+          </div>
+          <div id="logInMessage" style="display:none">
+            <p>Logged in. Please wait for everyone to join...</p>
+            
+          </div>
+          <div id="roleReveal" style="display:none">
+            <h1>Your role: <span id="role"></span></h1>
+            <script src="playerLogin.js" charset="utf-8"></script>
+          </div>
+          <div id="roleList" style="display:none">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody id="roleTable">
+
+              </tbody>
+            </table>
+            <script src="roleTable.js"></script>
+          </div>
+    </main>
+   
+
+    
+
+  </body>
+</html>
