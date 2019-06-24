@@ -6,7 +6,7 @@
     "node": "8.11.4"
   },
   "scripts": {
-    "start": "index.js"
+    "start": "node index.js"
 },
   "dependencies": {
     "chance": "^1.0.18",
