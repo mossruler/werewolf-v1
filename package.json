@@ -5,6 +5,9 @@
   "engines": {
     "node": "8.11.4"
   },
+  "scripts": {
+    "start": "index.js"
+},
   "dependencies": {
     "chance": "^1.0.18",
     "express": "^4.15.2",
