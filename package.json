@@ -2,6 +2,9 @@
   "name": "werewolf",
   "version": "0.0.1",
   "description": "Werewolf helper for mobile",
+  "engines": {
+    "node": "8.11.4"
+  },
   "dependencies": {
     "chance": "^1.0.18",
     "express": "^4.15.2",
