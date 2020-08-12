@@ -1,4 +1,5 @@
 # werewolf-v1
 Werewolf for the web
+Requires a device for each player (Including moderator)
 
-(https://vetlem.com/werewolf)
+[Play here](https://vetlem.com/werewolf)
