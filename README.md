@@ -2,4 +2,4 @@
 Werewolf for the web
 Requires a device for each player (Including moderator)
 
-[Play here](https://vetlem.com/werewolf)
+[Play here](https://werewolf.vetlem.com)
