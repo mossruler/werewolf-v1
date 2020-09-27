@@ -9,12 +9,19 @@ villageBuilderInput.addEventListener("keydown", function (e) {
 });
 function addVillageMember() {
   if (villageBuilderInput.value != "") {
-    villageBuilderList.innerHTML += "<li class='list-group-item'>"+villageBuilderInput.value+"</li>";
+    villageBuilderList.innerHTML += "<li class='list-group-item "+villageBuilderInput.value+"'>"+villageBuilderInput.value+" <span onclick=\"removeVillageMember('"+villageBuilderInput.value+"')\">✖</span></li>";
     villageBuilderCounter.innerHTML++;
     village.push(villageBuilderInput.value);
     villageBuilderInput.focus();
   }
   villageBuilderInput.value = "";
+}
+
+function removeVillageMember(name) {
+  document.getElementsByClassName(name)[0].remove();
+  var index = village.indexOf(name);
+  village.splice(index, 1);
+  villageBuilderCounter.innerHTML--;
 }
 
 function buildVillage() {
