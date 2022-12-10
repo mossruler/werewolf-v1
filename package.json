@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "chance": "^1.0.18",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.18.0",
     "random-words": "^1.1.0",
     "socket.io": "^2.2.0"
